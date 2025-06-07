@@ -1,0 +1,65 @@
+.skill-bar {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.skill-percentage {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.skill-progress-bg {
+  height: 8px;
+  background-color: #1e293b;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 4px;
+  position: relative;
+  transition: width 1.5s ease-out;
+}
+
+.skill-progress-fill.animate {
+  animation: shimmer 2s infinite linear;
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Hover effect */
+.skill-bar:hover .skill-progress-fill {
+  filter: brightness(1.2);
+}
+
+.skill-bar:hover .skill-name {
+  color: #8b5cf6;
+}
